@@ -1,0 +1,6 @@
+.cards-container a {
+  text-decoration: none
+}
+.cards-container .col-lg-3 {
+  padding-right: 0;
+}

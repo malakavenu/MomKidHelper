@@ -1,0 +1,36 @@
+<button type="button" routerLink="" class="btn btn-secondary">Go Back</button>
+<div class="col-12 mt-3">
+  <h4>Class {{message}}</h4>
+  <p-tabView>
+    <p-tabPanel [header]="item.label" *ngFor="let item of items; let i = index" [selected]="i == 0">
+      <ng-container *ngIf="item.label === 'Question Papers'">
+        <ng-container *ngFor="let data of item.content; let i = index">
+          <p><a href="#" download="../../assets/data/OpenId_Implementation.docx">{{i + 1}}) {{data}}</a></p>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="item.label === 'Documents'">
+        <ng-container *ngFor="let data of item.content; let i = index">
+          <p><a href="#" download="../../assets/data/OpenId_Implementation.docx">{{i + 1}}) {{data}}</a></p>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="item.label === 'Videos'">
+        <ng-container *ngFor="let data of item.content; let i = index">
+          <p>
+            <p-lightbox type="content">
+              <a class="group" href="#">
+                {{i + 1}}) {{data}}
+              </a>
+              <iframe width="560" height="315" [src]="safeUrl(data)" frameborder="0" allowfullscreen></iframe>
+            </p-lightbox>
+          </p>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="item.label === 'Images'">
+          <p-galleria [images]="images" panelWidth="500" panelHeight="313" [showCaption]="true"></p-galleria>
+        <!-- <ng-container *ngFor="let data of item.content; let i = index">
+          <p><a href="#" download="../../assets/data/OpenId_Implementation.docx">{{i + 1}}) {{data}}</a></p>
+        </ng-container> -->
+      </ng-container>
+    </p-tabPanel>
+  </p-tabView>
+</div>

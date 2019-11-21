@@ -1,9 +1,14 @@
 import { AppPage } from './app.po';
 
-describe('primeng-quickstart-cli App', () => {
+describe('workspace-project App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
+  });
+
+  it('should display welcome message', () => {
+    page.navigateTo();
+    expect(page.getTitleText()).toEqual('Welcome to momkidhelper!');
   });
 });
